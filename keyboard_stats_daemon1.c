@@ -71,8 +71,8 @@ char *keyname(int code) {
 void logEvent(Event *event, FILE *logFile) {
 	fprintf(
 		logFile,
-		"Key press | %20s | Time: %ld , Type: %d, Code: %d, Value: %d\n",
-		keyname(event->code), event->time.tv_sec, event->type, event->code, event->value
+		"Key press | %-15s | Time: %ld.%ld, Type: %d, Code: %d, Value: %d\n",
+		keyname(event->code), event->time.tv_sec, event->time.tv_usec, event->type, event->code, event->value
 	);
 }
 
@@ -123,7 +123,7 @@ int main(void) {
 				if (key_press_count[i] != 0) {
 					fprintf(
 						statsFile, 
-						"%-20s\t\t%ld\t\t%.2f\n", 
+						"%-15s\t\t%ld\t\t%.2f\n", 
 						keyname(i), key_press_count[i], (key_press_count[i] / (double) keys_press_count) * 100
 					);
 					key_press_count[i] = 0;	
