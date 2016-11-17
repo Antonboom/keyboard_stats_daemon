@@ -6,6 +6,8 @@
  - про первый способ посмотреть можно тут:http://www.netzmafia.de/skripten/unix/linux-daemon-howto.html
  - про второй: https://www.freedesktop.org/software/systemd/man/systemd.service.html
  
+### Вариант через fork
+
 ```bash
 gcc keyboard_stats_daemon1.c -o keyboard_daemon.out
 sudo ./keyboard_daemon.out
